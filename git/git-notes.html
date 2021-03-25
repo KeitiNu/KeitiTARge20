@@ -10,32 +10,65 @@
             color: white;
             size: 1.5rem;
         }
+        h2,h3{
+            color: indigo;
+        }
     </style>
     <title>Git and GitHub</title>
 </head>
 
 <body>
     <h1>Git and GitHub</h1>
+    <br>
+    <div>
+        <h2>Git</h2>
+        <p>Git is a free version control system a tool which allows us to manage our source code  history. Majority of programmers use Git. Git doesnt have an interface - it runs with the terminal or windows command prompt. If you’re working with an IDE, you can also use the integrated terminal.</p>
+        <p>Git and GitHub are not the same thing. Git is a verison control system which allows you to manage your source code history. It is a local tool - a tool that you install on your machine. GitHub is an hosting and collaboration provider which has the purpose to host you Git repositories. Pushing the code from Git to GitHub is not mandatory, but it provides an easier way to collaborate in projects, beacause it makes it easier for other people access your code.</p>
+        <p>GitHub also has alternatives -  AWS code, BitBucket, Gitlap etc.</p>
+
+        <h3>Important Keywords</h3>
+        <p><b>Repository</b> - the location where your code history is stored.</p>
+        <p><b>Branch</b> -  a "folder" within the repository containing commits.</p> 
+        <p><b>Commits</b> - different stages of your code inside a branch.</p>    
+        
+        <h3>Git Basics</h3>
+        <p>If you want your project to be managed by Git, start with typing in the command (git init). Typing in command (git add .) will track the changes inside the repository. To save the current version of the code, type in (git commit -m ""), between the quotation marks there should be a meaningful comment about the given commit. With our first commit, we automatically crerated our master branch. Also - whenever you create a new commit, it will be the head of you branch. </p>
+        <p>Important thing to know is that Git doesnt add copies of your code, it tracks changes. Git compares the new code with old code and saves changes. This makes it fast and efficient.</p>
+        <p>If you make changes to your project and want to commit them, you can to that with commands git add . and git commit -m "message". If you want to see all of the commits inside of a branch, you can use command git log. If you do that, you can see that each commit has an unique id, the author, the date and the commit message.  The last commit will become the head of the branch, as explained earlier.</p>
+
+        <h3>Previous Commits and Deleting Code</h3>
+        <p>If you want to take a look at a previous code, you should use the command git checkout commit id . Our head will now be pointing at this commit, but it is no longer a part of a branch. To go back to your master branch, you should type in command git checkout master or git master. Now your back in the head of the master branch.</p>
+        <p>If you wish to delete some of the newer code, then you have to type in command git reset --hard commit id, where "commit id" is the id of the code you wish to keep. This will be your new head of the branch. Be careful! After deleting the Commit we cannot undo this change.</p>
+        <p>If you wish to delete uncommited code, use command git checkout -- . .This let’s us jump back to our last Commit.</p>
+
+        <h3>Working with Branches</h3>
+        <p>Why should you need a new branch? Because you dont want to mess with the working product (master branch), but you do want to make some changes in your project and test them. If you are finished, then you can merge both branches.</p>
+        <p>To create a new branch, you have to type git checkout -b branch-name, with branch-name being you chosen name for that branch. After creating the branch we’re automatically working in the latest commit of this branch. If you now add new commits, they will be saved in the new branch. This results in two heads - one in master branch and one in your new branch.</p>
+        <p>To merge a selected branch with your master branch, type in command git merge branch-name. This will add the changes made in your side-branch to your master branch and now your last commit is the head of both branches. After merging you might want to delete your side-branch. To do that, simply type in command git branch -D branch-name.</p>
+        <p>Merging branches can also cause conflicts. For example, if you have made changes in both branches. If automatic merge fails, you must solve the conflict. The conflict can be solved by deleting the code you dont want to keep. After that, commit the changes. This resolves the conflict and merges the branches successfully.</p>
+    </div>
+    <br>
     <hr>
     <div>
-        <h2>Topic</h2>
-        <p>Notes</p>
-
-        <h3>Command</h3>
-        <code>$git init</code>
-        <p>Initializes a local Git repository</p>        
+        <h2>Important Commands</h2>
+        <p><code>$git init</code> - will turn our project into a project managed by Git</p>
+        <p><code>$git status</code> - provides information about the current state.</p>
+        <p><code>$git add .</code> - will track changes in all files inside the repository</p>  
+        <p><code>$git commit -m <i>"message"</i></code> - saves updated code to a new commit named “your message”</p>
+        <p><code>$git branch</code> - lists all branches in our repository</p>  
+        <p><code>$git log</code> - will display all commits inside our branch</p>  
+        <p><code>$git master</code> - takes you back to the head of the master branch</p>  
+        <p><code>$git checkout <i>commit id</i></code> - jump to a specific commit of a branch</p>  
+        <p><code>$git reset --hard <i>commit id</i></code> - turn the selected commit into the new head</p>  
+        <p><code>$git checkout -- .</code> - let’s us jump back to our last commit</p>  
+        <p><code>$git checkout -b <i>branch-name</i></code> - creates a new branch based on the latest commit of the branch you’re currently working in.</p>
+        <p><code>$git merge <i>branch-name</i></code> - merges named brach with your master branch</p>
+        <p><code>$git branch -D <i>branch-name</i></code> - deletes branch with given name</p>
+        <p><code></code></p>
+        <p><code></code></p>
+        <p><code></code></p>
     </div>
-    <hr>
 
-    <div>
-        <h2>Topic</h2>
-        <p>Notes</p>
-
-        <h3>Command</h3>
-        <code>$git init</code>
-        <p>Initializes a local Git repository</p>        
-    </div>
-    <hr>
 
 
 </body>
